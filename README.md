@@ -1,110 +1,140 @@
 <p align="center"><img src="static/logo-small.png" alt="MarkText" width="100" height="100"></p>
 
-<h1 align="center">MarkText (中文精简版)</h1>
+<h1 align="center">MarkText 中文版</h1>
 
 <div align="center">
-  <strong>:high_brightness: 下一代 Markdown 编辑器 :crescent_moon:</strong><br>
+  <strong>下一代 Markdown 编辑器</strong><br>
   一款简单而优雅的开源 Markdown 编辑器，专注于速度与可用性。<br>
-  <sub>本项目是基于原版 MarkText 深度定制的 **Windows 64位专属汉化版本**。</sub>
+  <sub>基于 <a href="https://github.com/marktext/marktext">marktext/marktext</a> 深度定制的 Windows 64位汉化版本</sub>
 </div>
 
 <br>
 
 <div align="center">
-  <!-- License -->
   <a href="LICENSE">
-    <img src="https://img.shields.io/github/license/marktext/marktext.svg" alt="LICENSE">
+    <img src="https://img.shields.io/github/license/marktext/marktext.svg" alt="MIT License">
   </a>
-  <a href="https://github.com/vvangpc/marktext-cn/actions">
-    <img src="https://github.com/vvangpc/marktext-cn/workflows/Build/badge.svg" alt="build">
+  <a href="https://github.com/vvangpc/marktext-cn/actions/workflows/build.yml">
+    <img src="https://github.com/vvangpc/marktext-cn/actions/workflows/build.yml/badge.svg?branch=master" alt="Build Status">
+  </a>
+  <a href="https://github.com/vvangpc/marktext-cn/actions/workflows/release.yml">
+    <img src="https://github.com/vvangpc/marktext-cn/actions/workflows/release.yml/badge.svg?branch=master" alt="Release Status">
   </a>
 </div>
 
-<br />
-
-## 🌟 项目特色 (关于此分支)
-
-本项目 (`vvangpc/marktext-cn`) 脱胎于备受赞誉的开源项目 MarkText。针对国内 Windows 用户的核心诉求，我们做出了以下深度定制改造：
-
-1. **全面中文化**：深度翻译了所有的软件菜单模板（包括文件、编辑、段落、格式、视图、主题等），使用符合国人习惯的专业术语，并完美保留了系统级 Alt 快捷键功能。
-2. **极简架构**：
-   - 彻底卸载了 macOS (`.dmg`, `.app`) 与 Linux (`.AppImage`, `.deb`) 的打包负担。
-   - 专注适配 Windows 环境，限定为 **x64 架构**（全面兼容 Win 10 / Win 11），大幅降低了构建失败率与代码冗余。
-3. **现代化云编译**：完全打通并修复了 GitHub Actions 的云端环境链路，所有版本均可由云端全自动生成可用 `.exe` 和 免安装免编译的便携包。
+<br>
 
 ---
 
-## 📷 软件截图
+## 关于本项目
 
-![](docs/marktext.png?raw=true)
+本项目 (`vvangpc/marktext-cn`) 是 [MarkText](https://github.com/marktext/marktext) 的 Windows 专属汉化版，针对国内用户做了以下改造：
+
+| 改动项 | 说明 |
+|--------|------|
+| **全面汉化** | 菜单栏、右键菜单、首选项界面全部翻译为中文 |
+| **精简架构** | 移除 macOS / Linux 构建支持，专注 Windows x64 |
+| **云端编译** | GitHub Actions 全自动构建，推送即得 `.exe` 安装包 |
+
+### 已汉化内容
+
+- **菜单栏**：文件、编辑、格式、段落、视图、主题、窗口、帮助
+- **右键菜单**：编辑区、标签栏、侧边栏文件树
+- **首选项**：通用、编辑器、Markdown、图片、拼写、主题、快捷键所有页面
 
 ---
 
-## ✨ 核心功能 (继承自原版)
+## 软件截图
 
-- 实时预览 (WYSIWYG) 结合干净简洁的界面，带来无干扰的沉浸式写作体验。
-- 支持 [CommonMark 规范](https://spec.commonmark.org/0.29/)、[GitHub Flavored Markdown 规范](https://github.github.com/gfm/) 并选择性支持 Pandoc markdown。
-- 丰富的 Markdown 扩展：数学公式 (KaTeX)、Front Matter 和 Emoji 标签。
-- 支持段落重构与行内样式快捷键，显著提升输入效率。
-- 支持导出为高质量的 **HTML** 和 **PDF** 文件。
-- 包含丰富的内置主题：**Cadmium Light**, **Material Dark** 等六款精心调校的编辑器皮肤。
-- 三大沉浸编辑模式：**源码模式 (Source Code)**、**打字机模式 (Typewriter)** 和 **专注模式 (Focus)**。
-- 剪贴板原图直连映射解析（直接粘贴图像）。
+![MarkText 截图](docs/marktext.png)
 
-<h4 align="center">:smile_cat:内置编辑模式:dog:</h4>
+---
 
-| 源码模式 (Source Code)          | 打字机模式 (Typewriter)               | 专注模式 (Focus)               |
-|:--------------------:|:------------------------:|:-------------------:|
+## 核心功能
+
+- **所见即所得**（WYSIWYG）实时预览，沉浸式无干扰写作体验
+- 支持 [CommonMark](https://spec.commonmark.org/0.29/)、[GitHub Flavored Markdown](https://github.github.com/gfm/) 及 Pandoc 扩展语法
+- 数学公式（KaTeX）、Front Matter、Emoji 支持
+- 导出为 **HTML** 和 **PDF**
+- 六款内置主题：Cadmium Light、Dark、One Dark、Material Dark、Graphite Light、Ulysses Light
+- 三种写作模式：**源码模式**、**打字机模式**、**专注模式**
+- 支持直接粘贴剪贴板图片
+
+| 源码模式 | 打字机模式 | 专注模式 |
+|:---:|:---:|:---:|
 | ![](docs/source.gif) | ![](docs/typewriter.gif) | ![](docs/focus.gif) |
 
 ---
 
-## 📥 下载与安装
+## 下载安装
 
-### 稳定构建版下载
-由于本项目配置了全自动构建流水线，获取最新中文发行版非常简单：
+### 方式一：从 Actions 下载构建产物（推荐）
 
-1. 点击仓库上方的 **[Actions](https://github.com/vvangpc/marktext-cn/actions)** 标签页。
-2. 在左侧的工作流列表中，点击最新的 `Build` 任务记录。
-3. 滚动到页面底部的 **Artifacts (构建产物)** 区域。
-4. **下载 `MarkText-Windows-Prebuild`**：解压后即可直接双击 `marktext-setup.exe` 进行安装，或提取免安装版本使用。
+1. 打开 **[Actions 页面](https://github.com/vvangpc/marktext-cn/actions)**
+2. 点击最新成功的 **Release** 或 **Build** 工作流
+3. 滚动到底部 **Artifacts** 区域
+4. 下载 **`marktext-setup-windows`**（含 NSIS 安装包）
+
+> 构建产物保留 **30 天**，请及时下载。
+
+### 方式二：触发新构建
+
+向 `master` 分支提交任意更改，或推送 `release-v*` 分支，即可自动触发构建：
+
+```bash
+git push origin master
+# 或
+git checkout -b release-v1.0.0 && git push origin release-v1.0.0
+```
 
 ---
 
-## 🛠️ 本地开发与构建
+## 本地开发
 
-如果您想继续完善这款中文编辑器的源码并打包：
+### 环境要求
 
-**1. 环境准备:**
-- 操作系统：Windows (推荐 Win 10及以上)
-- **Node.js**: `v16.x` (`16.20.2` 推荐)
-- **Python**: `v3.11` (切勿使用 3.12 及以上版本，必须带有 `distutils`)
-- **Yarn**: `^1.22`
-- **C++ 编译链**: Visual Studio 2019 或 2022 (需要安装 *使用C++的桌面开发* 工作负载)
+| 依赖 | 版本要求 |
+|------|---------|
+| 操作系统 | Windows 10 / 11 (x64) |
+| Node.js | v16.x（推荐 16.20.2） |
+| Python | 3.11（**不支持** 3.12+，需含 distutils） |
+| Yarn | ^1.22 |
+| C++ 编译工具 | Visual Studio 2019 / 2022，勾选"使用C++的桌面开发" |
 
-**2. 代码初始化:**
+### 快速开始
+
 ```bash
-# 获取源码
+# 克隆仓库
 git clone https://github.com/vvangpc/marktext-cn.git
 cd marktext-cn
 
 # 安装依赖
 yarn install --check-files --frozen-lockfile
+
+# 启动开发模式（热更新）
+yarn dev
+
+# 打包 Windows 安装包
+yarn release:win
 ```
 
-**3. 本地调试与打包:**
-```bash
-# 启动本地开发热更服务器
-yarn run dev
-
-# 编译并打包为 Windows .exe 文件
-yarn run release:win
-```
+打包产物输出到 `build/` 目录：
+- `marktext-setup.exe` — NSIS 安装包
+- `marktext-x64-win.zip` — 便携压缩包
 
 ---
 
-## 🤝 鸣谢与许可
+## CI/CD 工作流
 
-此分支项目的构建与优化由国人社区提供。所有底层核心技术以及 UI 灵感归功于 [Jocs](https://github.com/Jocs) 及其背后的整个官方 [MarkText Contributors](https://github.com/marktext/marktext/graphs/contributors) 团队。
+| 工作流 | 触发条件 | 产出 |
+|--------|---------|------|
+| `build.yml` | 推送到 master | 构建校验 + `MarkText-Windows-Prebuild` |
+| `release.yml` | 推送到 master 或 `release-v*` 分支 | `marktext-setup-windows` + `marktext-windows-zip` |
 
-**授权协议**：[**MIT License**](LICENSE)
+---
+
+## 鸣谢与许可
+
+本项目基于 [Jocs](https://github.com/Jocs) 及 [MarkText Contributors](https://github.com/marktext/marktext/graphs/contributors) 的出色工作。
+
+**授权协议**：[MIT License](LICENSE)
