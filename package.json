@@ -116,7 +116,7 @@
     "electron": "^18.0.4",
     "electron-builder": "^23.0.6",
     "electron-devtools-installer": "^3.2.0",
-    "electron-rebuild": "^3.2.7",
+    "@electron/rebuild": "^3.6.0",
     "electron-updater": "^5.0.2",
     "eslint": "^8.13.0",
     "eslint-config-standard": "^16.0.3",
@@ -175,6 +175,7 @@
     "webpack-merge": "^5.8.0"
   },
   "resolutions": {
+    "node-gyp": "9.4.1",
     "node-abi": "^3.8.0",
     "node-addon-api": "^4.3.0"
   },
