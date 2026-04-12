@@ -2,10 +2,9 @@ name: Release
 
 on:
   push:
-    tags:
-      - 'v*'
     branches:
       - 'release-v*'
+      - master
 
 jobs:
   windows:
@@ -14,7 +13,6 @@ jobs:
     timeout-minutes: 60
 
     env:
-      MARKTEXT_IS_STABLE: 1
       MARKTEXT_EXIT_ON_ERROR: 1
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       GYP_MSVS_VERSION: 2022
@@ -70,8 +68,8 @@ jobs:
       - name: Install dependencies
         run: yarn install --check-files --frozen-lockfile
 
-      - name: Build and release
-        run: yarn release:win --publish always
+      - name: Build Windows installer
+        run: yarn release:win
 
       - name: Calculate checksums
         run: |
@@ -79,26 +77,18 @@ jobs:
           get-filehash -Algorithm SHA256 "build\marktext-*-win.zip"
         shell: pwsh
 
-      - name: Upload setup installer as artifact
+      - name: Upload NSIS installer
         uses: actions/upload-artifact@v4
         with:
-          name: marktext-windows-installer
+          name: marktext-setup-windows
           path: build/marktext-setup.exe
           if-no-files-found: error
+          retention-days: 30
 
-      - name: Upload Windows zip as artifact
+      - name: Upload Windows ZIP
         uses: actions/upload-artifact@v4
         with:
           name: marktext-windows-zip
           path: build/marktext-*-win.zip
           if-no-files-found: error
-
-      - name: Create GitHub Release
-        if: startsWith(github.ref, 'refs/tags/v')
-        uses: softprops/action-gh-release@v1
-        with:
-          files: |
-            build/marktext-setup.exe
-            build/marktext-*-win.zip
-          draft: false
-          prerelease: false
+          retention-days: 30
