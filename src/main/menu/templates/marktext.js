@@ -8,7 +8,7 @@ export default function (keybindings) {
   return {
     label: 'MarkText',
     submenu: [{
-      label: '关于 MarkText',
+      label: '关于MarkText',
       click (menuItem, focusedWindow) {
         showAboutDialog(focusedWindow)
       }
@@ -18,7 +18,7 @@ export default function (keybindings) {
         actions.checkUpdates(focusedWindow)
       }
     }, {
-      label: '偏好设置',
+      label: '首选项',
       accelerator: keybindings.getAccelerator('file.preferences'),
       click () {
         actions.userSetting()
@@ -32,7 +32,7 @@ export default function (keybindings) {
     }, {
       type: 'separator'
     }, {
-      label: '隐藏 MarkText',
+      label: '隐藏MarkText',
       accelerator: keybindings.getAccelerator('mt.hide'),
       click () {
         actions.osxHide()
@@ -51,7 +51,7 @@ export default function (keybindings) {
     }, {
       type: 'separator'
     }, {
-      label: '退出 MarkText',
+      label: '退出MarkText',
       accelerator: keybindings.getAccelerator('file.quit'),
       click: app.quit
     }]

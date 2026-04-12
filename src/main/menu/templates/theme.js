@@ -14,7 +14,7 @@ export default function (userPreference) {
         actions.selectTheme('light')
       }
     }, {
-      label: '深色',
+      label: 'Dark',
       type: 'radio',
       id: 'dark',
       checked: theme === 'dark',

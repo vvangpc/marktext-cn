@@ -8,13 +8,13 @@ export default function (keybindings, userPreference, recentlyUsedFiles) {
   const fileMenu = {
     label: '文件(&F)',
     submenu: [{
-      label: '新建标签页',
+      label: '新标签页',
       accelerator: keybindings.getAccelerator('file.new-tab'),
       click (menuItem, browserWindow) {
         actions.newBlankTab(browserWindow)
       }
     }, {
-      label: '新建窗口',
+      label: '新窗口',
       accelerator: keybindings.getAccelerator('file.new-window'),
       click (menuItem, browserWindow) {
         actions.newEditorWindow()
@@ -38,7 +38,7 @@ export default function (keybindings, userPreference, recentlyUsedFiles) {
 
   if (!isOsx) {
     const recentlyUsedMenu = {
-      label: '最近使用的文件',
+      label: '最近打开',
       submenu: []
     }
 
@@ -141,7 +141,7 @@ export default function (keybindings, userPreference, recentlyUsedFiles) {
     type: 'separator',
     visible: !isOsx
   }, {
-    label: '偏好设置...',
+    label: '首选项...',
     accelerator: keybindings.getAccelerator('file.preferences'),
     visible: !isOsx,
     click () {

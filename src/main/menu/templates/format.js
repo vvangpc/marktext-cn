@@ -66,7 +66,7 @@ export default function (keybindings) {
       }
     }, {
       id: 'inlineMathMenuItem',
-      label: '行内数学公式',
+      label: '行内数学',
       type: 'checkbox',
       accelerator: keybindings.getAccelerator('format.inline-math'),
       click (menuItem, focusedWindow) {

@@ -6,7 +6,7 @@ export default function (keybindings) {
     label: '段落(&P)',
     submenu: [{
       id: 'heading1MenuItem',
-      label: '一级标题',
+      label: '标题 1',
       type: 'checkbox',
       accelerator: keybindings.getAccelerator('paragraph.heading-1'),
       click (menuItem, focusedWindow) {
@@ -14,7 +14,7 @@ export default function (keybindings) {
       }
     }, {
       id: 'heading2MenuItem',
-      label: '二级标题',
+      label: '标题 2',
       type: 'checkbox',
       accelerator: keybindings.getAccelerator('paragraph.heading-2'),
       click (menuItem, focusedWindow) {
@@ -22,7 +22,7 @@ export default function (keybindings) {
       }
     }, {
       id: 'heading3MenuItem',
-      label: '三级标题',
+      label: '标题 3',
       type: 'checkbox',
       accelerator: keybindings.getAccelerator('paragraph.heading-3'),
       click (menuItem, focusedWindow) {
@@ -30,7 +30,7 @@ export default function (keybindings) {
       }
     }, {
       id: 'heading4MenuItem',
-      label: '四级标题',
+      label: '标题 4',
       type: 'checkbox',
       accelerator: keybindings.getAccelerator('paragraph.heading-4'),
       click (menuItem, focusedWindow) {
@@ -38,7 +38,7 @@ export default function (keybindings) {
       }
     }, {
       id: 'heading5MenuItem',
-      label: '五级标题',
+      label: '标题 5',
       type: 'checkbox',
       accelerator: keybindings.getAccelerator('paragraph.heading-5'),
       click (menuItem, focusedWindow) {
@@ -46,7 +46,7 @@ export default function (keybindings) {
       }
     }, {
       id: 'heading6MenuItem',
-      label: '六级标题',
+      label: '标题 6',
       type: 'checkbox',
       accelerator: keybindings.getAccelerator('paragraph.heading-6'),
       click (menuItem, focusedWindow) {
@@ -96,7 +96,7 @@ export default function (keybindings) {
       }
     }, {
       id: 'mathBlockMenuItem',
-      label: '数学公式块',
+      label: '数学块',
       type: 'checkbox',
       accelerator: keybindings.getAccelerator('paragraph.math-formula'),
       click (menuItem, focusedWindow) {
@@ -104,7 +104,7 @@ export default function (keybindings) {
       }
     }, {
       id: 'htmlBlockMenuItem',
-      label: 'Html Block',
+      label: 'HTML块',
       type: 'checkbox',
       accelerator: keybindings.getAccelerator('paragraph.html-block'),
       click (menuItem, focusedWindow) {
@@ -150,7 +150,7 @@ export default function (keybindings) {
       type: 'separator'
     }, {
       id: 'paragraphMenuItem',
-      label: '普通段落',
+      label: '段落',
       type: 'checkbox',
       accelerator: keybindings.getAccelerator('paragraph.paragraph'),
       click (menuItem, focusedWindow) {
@@ -158,7 +158,7 @@ export default function (keybindings) {
       }
     }, {
       id: 'horizontalLineMenuItem',
-      label: '水平分割线',
+      label: '水平线',
       type: 'checkbox',
       accelerator: keybindings.getAccelerator('paragraph.horizontal-line'),
       click (menuItem, focusedWindow) {
@@ -166,7 +166,7 @@ export default function (keybindings) {
       }
     }, {
       id: 'frontMatterMenuItem',
-      label: '前言 (Front Matter)',
+      label: '文档头',
       type: 'checkbox',
       accelerator: keybindings.getAccelerator('paragraph.front-matter'),
       click (menuItem, focusedWindow) {

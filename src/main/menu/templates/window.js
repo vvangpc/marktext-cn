@@ -15,7 +15,7 @@ export default function (keybindings) {
       }
     }, {
       id: 'alwaysOnTopMenuItem',
-      label: '置顶显示',
+      label: '置顶',
       type: 'checkbox',
       accelerator: keybindings.getAccelerator('window.toggle-always-on-top'),
       click (menuItem, browserWindow) {
@@ -38,7 +38,7 @@ export default function (keybindings) {
     }, {
       type: 'separator'
     }, {
-      label: '全屏模式',
+      label: '全屏显示',
       accelerator: keybindings.getAccelerator('window.toggle-full-screen'),
       click (item, browserWindow) {
         if (browserWindow) {
@@ -50,7 +50,7 @@ export default function (keybindings) {
 
   if (isOsx) {
     menu.submenu.push({
-      label: '全部移至前台',
+      label: '将所有窗口移至前面',
       click () {
         Menu.sendActionToFirstResponder('arrangeInFront:')
       }

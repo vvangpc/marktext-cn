@@ -1,66 +1,63 @@
 <template>
   <div class="pref-image-uploader">
-    <h5>Uploader</h5>
+    <h5>上传器</h5>
     <section class="current-uploader">
-      <div v-if="isValidUploaderService(currentUploader)">The current image uploader is
-        {{ getServiceNameById(currentUploader) }}.</div>
-      <span v-else>Currently no uploader is selected. Please select an uploader and config
-        it.</span>
+      <div v-if="isValidUploaderService(currentUploader)">当前图片上传器是
+        {{ getServiceNameById(currentUploader) }}。</div>
+      <span v-else>当前未选择上传器，请选择一个上传器并进行配置。</span>
     </section>
     <section class="configration">
       <cur-select :value="currentUploader" :options="uploaderOptions"
         :onChange="value => setCurrentUploader(value)"></cur-select>
       <div class="picgo" v-if="currentUploader === 'picgo'">
         <div v-if="!picgoExists" class="warning">
-          Your system does not have <span class="link"
-            @click="open('https://github.com/PicGo/PicGo-Core')">picgo</span> installed, please
-          install it before use.
+          您的系统未安装 <span class="link"
+            @click="open('https://github.com/PicGo/PicGo-Core')">picgo</span>，请先安装后再使用。
         </div>
       </div>
       <div class="github" v-if="currentUploader === 'github'">
-        <div class="warning">Github will be removed in a future version, please use picgo</div>
+        <div class="warning">GitHub上传将在未来版本中移除，请改用picgo</div>
         <div class="form-group">
           <div class="label">
-            GitHub token:
+            GitHub令牌：
             <el-tooltip class="item" effect="dark"
-              content="The token is saved by Keychain on macOS, Secret Service API/libsecret on Linux and Credential Vault on Windows"
+              content="令牌在macOS上由Keychain保存，在Linux上由Secret Service API/libsecret保存，在Windows上由Credential Vault保存"
               placement="top-start">
               <i class="el-icon-info"></i>
             </el-tooltip>
           </div>
-          <el-input v-model="githubToken" placeholder="Input token" size="mini"></el-input>
+          <el-input v-model="githubToken" placeholder="输入令牌" size="mini"></el-input>
         </div>
         <div class="form-group">
-          <div class="label">Owner name:</div>
+          <div class="label">拥有者名称：</div>
           <el-input v-model="github.owner" placeholder="owner" size="mini"></el-input>
         </div>
         <div class="form-group">
-          <div class="label">Repo name:</div>
+          <div class="label">仓库名称：</div>
           <el-input v-model="github.repo" placeholder="repo" size="mini"></el-input>
         </div>
         <div class="form-group">
-          <div class="label">Branch name (optional):</div>
+          <div class="label">分支名称（可选）：</div>
           <el-input v-model="github.branch" placeholder="branch" size="mini"></el-input>
         </div>
         <legal-notices-checkbox class="github"
           :class="[{ 'error': legalNoticesErrorStates.github }]"
           :uploaderService="uploadServices.github"></legal-notices-checkbox>
         <div class="form-group">
-          <el-button size="mini" :disabled="githubDisable" @click="save('github')">Save
+          <el-button size="mini" :disabled="githubDisable" @click="save('github')">保存
           </el-button>
         </div>
       </div>
       <div class="script" v-else-if="currentUploader === 'cliScript'">
-        <div class="description">The script will be executed with the image file path as its only
-          argument and it should output any valid value for the <code>src</code> attribute of a
-          <em>HTMLImageElement</em>.
+        <div class="description">脚本将以图片文件路径作为唯一参数执行，并应输出 <em>HTMLImageElement</em> 的
+          <code>src</code> 属性的任何有效值。
         </div>
         <div class="form-group">
-          <div class="label">Shell script location:</div>
-          <el-input v-model="cliScript" placeholder="Script absolute path" size="mini"></el-input>
+          <div class="label">Shell脚本位置：</div>
+          <el-input v-model="cliScript" placeholder="脚本绝对路径" size="mini"></el-input>
         </div>
         <div class="form-group">
-          <el-button size="mini" :disabled="cliScriptDisable" @click="save('cliScript')">Save
+          <el-button size="mini" :disabled="cliScriptDisable" @click="save('cliScript')">保存
           </el-button>
         </div>
       </div>
@@ -191,8 +188,8 @@ export default {
         })
       }
       notice.notify({
-        title: 'Save Config',
-        message: type === 'github' ? 'The Github configration has been saved.' : 'The command line script configuration has been saved',
+        title: '保存配置',
+        message: type === 'github' ? 'GitHub配置已保存。' : '命令行脚本配置已保存',
         type: 'primary'
       })
     },

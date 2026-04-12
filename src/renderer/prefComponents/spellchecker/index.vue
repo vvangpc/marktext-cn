@@ -1,30 +1,30 @@
 <template>
   <div class="pref-spellchecker">
-    <h4>Spelling</h4>
+    <h4>拼写</h4>
     <compound>
       <template #head>
         <bool
-          description="Enable spell checking"
+          description="启用拼写检查"
           :bool="spellcheckerEnabled"
           :onChange="handleSpellcheckerEnabled"
         ></bool>
       </template>
       <template #children>
         <bool
-          description="Hide marks for spelling errors"
+          description="隐藏拼写错误标记"
           :bool="spellcheckerNoUnderline"
           :disable="!spellcheckerEnabled"
           :onChange="value => onSelectChange('spellcheckerNoUnderline', value)"
         ></bool>
         <bool
           v-show="isOsx"
-          description="Automatically detect document language"
+          description="自动检测文档语言"
           :bool="true"
           :disable="true"
         ></bool>
         <cur-select
           v-show="!isOsx"
-          description="Default language for spell checking"
+          description="默认拼写检查语言"
           :value="spellcheckerLanguage"
           :options="availableDictionaries"
           :disable="!spellcheckerEnabled"
@@ -34,23 +34,23 @@
     </compound>
 
     <div v-if="isOsx && spellcheckerEnabled" class="description">
-      The used language will be detected automatically while typing. Additional languages may be added through "Language & Region" in your system preferences pane.
+      输入时将自动检测使用的语言。可通过系统偏好设置中的"语言与地区"添加其他语言。
     </div>
 
     <div v-if="!isOsx && spellcheckerEnabled">
-      <h6 class="title">Custom dictionary:</h6>
-      <div class="description">Edit words in custom dictionary.</div>
+      <h6 class="title">自定义词典：</h6>
+      <div class="description">编辑自定义词典中的词语。</div>
       <el-table
         :data="wordsInCustomDictionary"
-        empty-text="No words available"
+        empty-text="暂无词语"
         style="width: 100%"
       >
-        <el-table-column prop="word" label="Word">
+        <el-table-column prop="word" label="词语">
         </el-table-column>
 
-        <el-table-column fixed="right" label="Options" width="90">
+        <el-table-column fixed="right" label="操作" width="90">
           <template slot-scope="scope">
-            <el-button @click="handleDeleteClick(scope.row)" type="text" size="small" title="Delete">
+            <el-button @click="handleDeleteClick(scope.row)" type="text" size="small" title="删除">
               <i class="el-icon-delete"></i>
             </el-button>
           </template>
@@ -133,7 +133,7 @@ export default {
         .catch(error => {
           log.error(error)
           notice.notify({
-            title: 'Failed to switch language',
+            title: '切换语言失败',
             type: 'error',
             message: error.message
           })
@@ -153,9 +153,9 @@ export default {
               this.wordsInCustomDictionary = this.wordsInCustomDictionary.filter(item => item.word !== selectedItem.word)
             } else {
               notice.notify({
-                title: 'Failed to remove custom word',
+                title: '删除自定义词语失败',
                 type: 'error',
-                message: 'An unexpected error occurred while saving.'
+                message: '保存时发生意外错误。'
               })
             }
           })

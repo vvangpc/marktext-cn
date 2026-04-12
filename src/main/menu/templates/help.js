@@ -32,12 +32,12 @@ export default function () {
     label: '帮助(&H)',
     role: 'help',
     submenu: [{
-      label: '快速入门...',
+      label: '快速开始...',
       click () {
         shell.openExternal('https://github.com/marktext/marktext/blob/master/docs/README.md')
       }
     }, {
-      label: 'Markdown 参考...',
+      label: 'Markdown参考...',
       click () {
         shell.openExternal('https://github.com/marktext/marktext/blob/master/docs/MARKDOWN_SYNTAX.md')
       }
@@ -49,39 +49,39 @@ export default function () {
     }, {
       type: 'separator'
     }, {
-      label: '资助 (Open Collective)...',
+      label: '通过Open Collective赞助...',
       click (item, win) {
         shell.openExternal('https://opencollective.com/marktext')
       }
     }, {
-      label: 'Twitter 反馈...',
+      label: '通过Twitter反馈...',
       click (item, win) {
         actions.showTweetDialog(win, 'twitter')
       }
     }, {
-      label: '报告问题或建议新功能...',
+      label: '报告问题或请求功能...',
       click () {
         shell.openExternal('https://github.com/marktext/marktext/issues')
       }
     }, {
       type: 'separator'
     }, {
-      label: '官方网站...',
+      label: '官网...',
       click () {
         shell.openExternal('https://github.com/marktext/marktext')
       }
     }, {
-      label: '在 GitHub 上关注...',
+      label: '在GitHub上关注...',
       click () {
         shell.openExternal('https://github.com/marktext/marktext')
       }
     }, {
-      label: '在 GitHub 上关注我们...',
+      label: '关注我们的Github...',
       click () {
         shell.openExternal('https://github.com/Jocs')
       }
     }, {
-      label: '在 Twitter 上关注我们...',
+      label: '关注我们的Twitter...',
       click () {
         shell.openExternal('https://twitter.com/marktextapp')
       }
@@ -110,7 +110,7 @@ export default function () {
     helpMenu.submenu.push({
       type: 'separator'
     }, {
-      label: '关于 MarkText...',
+      label: '关于MarkText...',
       click (menuItem, browserWindow) {
         actions.showAboutDialog(browserWindow)
       }

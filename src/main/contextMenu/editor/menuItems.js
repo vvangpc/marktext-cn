@@ -1,25 +1,25 @@
 // NOTE: This are mutable fields that may change at runtime.
 
 export const CUT = {
-  label: 'Cut',
+  label: '剪切',
   id: 'cutMenuItem',
   role: 'cut'
 }
 
 export const COPY = {
-  label: 'Copy',
+  label: '复制',
   id: 'copyMenuItem',
   role: 'copy'
 }
 
 export const PASTE = {
-  label: 'Paste',
+  label: '粘贴',
   id: 'pasteMenuItem',
   role: 'paste'
 }
 
 export const COPY_AS_MARKDOWN = {
-  label: 'Copy As Markdown',
+  label: '复制为Markdown',
   id: 'copyAsMarkdownMenuItem',
   click (menuItem, targetWindow) {
     targetWindow.webContents.send('mt::cm-copy-as-markdown')
@@ -27,7 +27,7 @@ export const COPY_AS_MARKDOWN = {
 }
 
 export const COPY_AS_HTML = {
-  label: 'Copy As Html',
+  label: '复制为HTML',
   id: 'copyAsHtmlMenuItem',
   click (menuItem, targetWindow) {
     targetWindow.webContents.send('mt::cm-copy-as-html')
@@ -35,7 +35,7 @@ export const COPY_AS_HTML = {
 }
 
 export const PASTE_AS_PLAIN_TEXT = {
-  label: 'Paste as Plain Text',
+  label: '粘贴为纯文本',
   id: 'pasteAsPlainTextMenuItem',
   click (menuItem, targetWindow) {
     targetWindow.webContents.send('mt::cm-paste-as-plain-text')
@@ -43,7 +43,7 @@ export const PASTE_AS_PLAIN_TEXT = {
 }
 
 export const INSERT_BEFORE = {
-  label: 'Insert Paragraph Before',
+  label: '在前面插入段落',
   id: 'insertParagraphBeforeMenuItem',
   click (menuItem, targetWindow) {
     targetWindow.webContents.send('mt::cm-insert-paragraph', 'before')
@@ -51,7 +51,7 @@ export const INSERT_BEFORE = {
 }
 
 export const INSERT_AFTER = {
-  label: 'Insert Paragraph After',
+  label: '在后面插入段落',
   id: 'insertParagraphAfterMenuItem',
   click (menuItem, targetWindow) {
     targetWindow.webContents.send('mt::cm-insert-paragraph', 'after')

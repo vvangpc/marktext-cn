@@ -31,7 +31,7 @@ export default function (keybindings) {
       }
     }, {
       id: 'focusModeMenuItem',
-      label: '聚焦模式',
+      label: '专注模式',
       accelerator: keybindings.getAccelerator('view.focus-mode'),
       type: 'checkbox',
       checked: false,
@@ -59,7 +59,7 @@ export default function (keybindings) {
         actions.toggleTabBar(focusedWindow)
       }
     }, {
-      label: '切换大纲视图',
+      label: '显示目录',
       id: 'tocMenuItem',
       accelerator: keybindings.getAccelerator('view.toggle-toc'),
       click (_, focusedWindow) {

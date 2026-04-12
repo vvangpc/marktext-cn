@@ -16,7 +16,7 @@ export default (isMisspelled, misspelledWord, wordSuggestions) => {
   const spellingSubmenu = []
 
   spellingSubmenu.push(new MenuItem({
-    label: 'Change Language...',
+    label: '切换语言...',
     // NB: On macOS the OS spell checker is used and will detect the language automatically.
     visible: !isOsx,
     click (menuItem, targetWindow) {
@@ -27,7 +27,7 @@ export default (isMisspelled, misspelledWord, wordSuggestions) => {
   // Handle misspelled word if wordSuggestions is set, otherwise word is correct.
   if (isMisspelled && misspelledWord && wordSuggestions) {
     spellingSubmenu.push({
-      label: 'Add to Dictionary',
+      label: '添加到词典',
       click (menuItem, targetWindow) {
         if (!addToDictionary(targetWindow, misspelledWord)) {
           log.error(`Error while adding "${misspelledWord}" to dictionary.`)
@@ -54,7 +54,7 @@ export default (isMisspelled, misspelledWord, wordSuggestions) => {
     }
   } else {
     spellingSubmenu.push({
-      label: 'Edit Dictionary...',
+      label: '编辑词典...',
       click (menuItem, targetWindow) {
         ipcMain.emit('app-create-settings-window', 'spelling')
       }

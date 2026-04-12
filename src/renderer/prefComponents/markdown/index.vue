@@ -3,31 +3,31 @@
     <h4>Markdown</h4>
     <compound>
       <template #head>
-        <h6 class="title">Lists:</h6>
+        <h6 class="title">列表：</h6>
       </template>
       <template #children>
         <bool
-          description="Prefer loose list items"
+          description="首选松散列表项"
           :bool="preferLooseListItem"
           :onChange="value => onSelectChange('preferLooseListItem', value)"
           more="https://spec.commonmark.org/0.29/#loose"
         ></bool>
         <cur-select
-          description="Preferred marker for bullet lists"
+          description="无序列表首选标记"
           :value="bulletListMarker"
           :options="bulletListMarkerOptions"
           :onChange="value => onSelectChange('bulletListMarker', value)"
           more="https://spec.commonmark.org/0.29/#bullet-list-marker"
         ></cur-select>
         <cur-select
-          description="Preferred marker for ordered lists"
+          description="有序列表首选标记"
           :value="orderListDelimiter"
           :options="orderListDelimiterOptions"
           :onChange="value => onSelectChange('orderListDelimiter', value)"
           more="https://spec.commonmark.org/0.29/#ordered-list"
         ></cur-select>
         <cur-select
-          description="Preferred list indentation"
+          description="首选列表缩进"
           :value="listIndentation"
           :options="listIndentationOptions"
           :onChange="value => onSelectChange('listIndentation', value)"
@@ -37,24 +37,24 @@
 
     <compound>
       <template #head>
-        <h6 class="title">Markdown extensions:</h6>
+        <h6 class="title">Markdown扩展：</h6>
       </template>
       <template #children>
         <cur-select
-          description="Front matter format"
+          description="文档头格式"
           :value="frontmatterType"
           :options="frontmatterTypeOptions"
           :onChange="value => onSelectChange('frontmatterType', value)"
         ></cur-select>
         <bool
-          description="Enable Pandoc-style superscript and subscript"
+          description="启用Pandoc风格的上标和下标"
           :bool="superSubScript"
           :onChange="value => onSelectChange('superSubScript', value)"
           more="https://pandoc.org/MANUAL.html#superscripts-and-subscripts"
         ></bool>
         <bool
-          description="Enable Pandoc-style footnotes"
-          notes="Requires restart."
+          description="启用Pandoc风格的脚注"
+          notes="需要重启。"
           :bool="footnote"
           :onChange="value => onSelectChange('footnote', value)"
           more="https://pandoc.org/MANUAL.html#footnotes"
@@ -64,16 +64,16 @@
 
     <compound>
       <template #head>
-        <h6 class="title">Compatibility:</h6>
+        <h6 class="title">兼容性：</h6>
       </template>
       <template #children>
         <bool
-          description="Enable HTML rendering"
+          description="启用HTML渲染"
           :bool="isHtmlEnabled"
           :onChange="value => onSelectChange('isHtmlEnabled', value)"
         ></bool>
         <bool
-          description="Enable GitLab compatibility mode"
+          description="启用GitLab兼容模式"
           :bool="isGitlabCompatibilityEnabled"
           :onChange="value => onSelectChange('isGitlabCompatibilityEnabled', value)"
         ></bool>
@@ -82,11 +82,11 @@
 
     <compound>
       <template #head>
-        <h6 class="title">Diagrams:</h6>
+        <h6 class="title">图表：</h6>
       </template>
       <template #children>
         <cur-select
-          description="Sequence diagram theme"
+          description="时序图主题"
           :value="sequenceTheme"
           :options="sequenceThemeOptions"
           :onChange="value => onSelectChange('sequenceTheme', value)"
@@ -97,11 +97,11 @@
 
     <compound>
       <template #head>
-        <h6 class="title">Misc:</h6>
+        <h6 class="title">其他：</h6>
       </template>
       <template #children>
         <cur-select
-          description="Preferred heading style"
+          description="首选标题样式"
           :value="preferHeadingStyle"
           :options="preferHeadingStyleOptions"
           :onChange="value => onSelectChange('preferHeadingStyle', value)"

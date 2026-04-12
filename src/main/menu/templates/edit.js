@@ -40,13 +40,13 @@ export default function (keybindings) {
     }, {
       type: 'separator'
     }, {
-      label: '复制为 Markdown',
+      label: '复制为Markdown',
       accelerator: keybindings.getAccelerator(COMMANDS.EDIT_COPY_AS_MARKDOWN),
       click (menuItem, browserWindow) {
         actions.editorCopyAsMarkdown(browserWindow)
       }
     }, {
-      label: '复制为 HTML',
+      label: '复制为HTML',
       accelerator: keybindings.getAccelerator(COMMANDS.EDIT_COPY_AS_HTML),
       click (menuItem, browserWindow) {
         actions.editorCopyAsHtml(browserWindow)
@@ -68,7 +68,7 @@ export default function (keybindings) {
     }, {
       type: 'separator'
     }, {
-      label: '复写',
+      label: '复制段落',
       accelerator: keybindings.getAccelerator(COMMANDS.EDIT_DUPLICATE),
       click (menuItem, browserWindow) {
         actions.editorDuplicate(browserWindow)
@@ -133,7 +133,7 @@ export default function (keybindings) {
       type: 'separator'
     }, {
       // TODO: Remove this menu entry and add it to the command palette (#1408).
-      label: '行尾序列',
+      label: '换行符',
       submenu: [{
         id: 'crlfLineEndingMenuEntry',
         label: '回车换行 (CRLF)',
