@@ -66,33 +66,14 @@ fileAssociations:
   description: "Markdown document"
   role: "Editor"
   icon: "../resources/icons/md.icns"
-mac:
-  artifactName: "marktext-${arch}-mac.${ext}"
-  icon: "resources/icons/icon.icns"
-  darkModeSupport: true
-  target:
-    - target: dmg
-      arch: [x64, arm64]
-    - target: zip
-      arch: [x64, arm64]
-dmg:
-  artifactName: "marktext-${arch}.${ext}"
-  contents:
-  - x: 410
-    y: 240
-    type: "link"
-    path: "/Applications"
-  - x: 130
-    y: 240
-    type: "file"
 win:
   artifactName: "marktext-${arch}-win.${ext}"
   icon: "resources/icons/icon.ico"
   target:
   - target: "nsis"
-    arch: [ia32, x64]
+    arch: [x64]
   - target: "zip"
-    arch: [ia32, x64]
+    arch: [x64]
   requestedExecutionLevel: "asInvoker"
 nsis:
   artifactName: "marktext-setup.${ext}"
@@ -100,63 +81,3 @@ nsis:
   oneClick: false
   allowToChangeInstallationDirectory: true
   include: "resources/windows/installer.nsh"
-linux:
-  artifactName: "marktext-${arch}.${ext}"
-  executableName: "marktext"
-  description: "A simple and elegant open-source markdown editor that focused on speed and usability."
-  maintainer: "MarkText Contributors"
-  category: "Office;TextEditor;Utility"
-  mimeTypes:
-  - "text/markdown"
-  icon: "resources/icons"
-  desktop:
-    StartupWMClass: "marktext"
-    Keywords: "marktext;"
-  target:
-  - target: "AppImage"
-  - target: "deb"
-  - target: "rpm"
-  - target: "tar.gz"
-  # Workaround because file association array doesn't work.
-  fileAssociations:
-  - ext: "md"
-    name: "Markdown"
-    description: "Markdown document"
-  - ext: "markdown"
-    name: "Markdown"
-    description: "Markdown document"
-  - ext: "mmd"
-    name: "Markdown"
-    description: "Markdown document"
-  - ext: "mdown"
-    name: "Markdown"
-    description: "Markdown document"
-  - ext: "mdtxt"
-    name: "Markdown"
-    description: "Markdown document"
-  - ext: "mdtext"
-    name: "Markdown"
-    description: "Markdown document"
-deb:
-  # Custom dependencies:
-  depends:
-  # keytar
-  - "libsecret-1-0"
-  # keyboard-layout
-  - "libx11-xcb1"
-  - "libxkbfile1"
-  # fontmanager
-  - "libfontconfig1"
-  fpm:
-  # Expat := MIT like
-  - "--license=Expat"
-rpm:
-  # Custom dependencies:
-  depends:
-  # keytar
-  - "libsecret"
-  # keyboard-layout
-  - "libX11-xcb"
-  - "libxkbfile"
-  # fontmanager
-  - "fontconfig"
