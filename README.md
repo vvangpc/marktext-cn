@@ -1,16 +1,11 @@
 <p align="center"><img src="static/logo-small.png" alt="MarkText" width="100" height="100"></p>
 
-<h1 align="center">MarkText</h1>
+<h1 align="center">MarkText (中文精简版)</h1>
 
 <div align="center">
-  <a href="https://twitter.com/intent/tweet?via=marktextme&url=https://github.com/marktext/marktext/&text=What%20do%20you%20want%20to%20say%20to%20app?&hashtags=happyMarkText">
-    <img src="https://img.shields.io/twitter/url/https/github.com/marktext/marktext.svg?style=for-the-badge" alt="twitter">
-  </a>
-</div>
-<div align="center">
-  <strong>:high_brightness: Next generation markdown editor :crescent_moon:</strong><br>
-  A simple and elegant open-source markdown editor that focused on speed and usability.<br>
-  <sub>Available for Linux, macOS and Windows.</sub>
+  <strong>:high_brightness: 下一代 Markdown 编辑器 :crescent_moon:</strong><br>
+  一款简单而优雅的开源 Markdown 编辑器，专注于速度与可用性。<br>
+  <sub>本项目是基于原版 MarkText 深度定制的 **Windows 64位专属汉化版本**。</sub>
 </div>
 
 <br>
@@ -20,253 +15,96 @@
   <a href="LICENSE">
     <img src="https://img.shields.io/github/license/marktext/marktext.svg" alt="LICENSE">
   </a>
-  <!-- Build Status -->
-  <a href="https://travis-ci.org/marktext/marktext/">
-    <img src="https://travis-ci.org/marktext/marktext.svg?branch=master" alt="build">
+  <a href="https://github.com/vvangpc/marktext-cn/actions">
+    <img src="https://github.com/vvangpc/marktext-cn/workflows/Build/badge.svg" alt="build">
   </a>
-  <a href="https://ci.appveyor.com/project/marktext/marktext/branch/master">
-    <img src="https://ci.appveyor.com/api/projects/status/l4gxgydj0i95hmxg/branch/master?svg=true" alt="build">
-  </a>
-  <!-- Downloads total -->
-  <a href="https://github.com/marktext/marktext/releases">
-    <img src="https://img.shields.io/github/downloads/marktext/marktext/total.svg" alt="total download">
-  </a>
-  <!-- Downloads latest release -->
-  <a href="https://github.com/marktext/marktext/releases/latest">
-    <img src="https://img.shields.io/github/downloads/marktext/marktext/v0.17.1/total.svg" alt="latest download">
-  </a>
-  <!-- sponsors -->
-  <a href="https://opencollective.com/marktext">
-    <img src="https://opencollective.com/marktext/tiers/silver-sponsors/badge.svg?label=SilverSponsors&color=brightgreen" alt="sponsors">
-  </a>
-</div>
-
-<div align="center">
-  <h3>
-    <a href="https://github.com/marktext/marktext">
-      Website
-    </a>
-    <span> | </span>
-    <a href="https://github.com/marktext/marktext#features">
-      Features
-    </a>
-    <span> | </span>
-    <a href="https://github.com/marktext/marktext#download-and-installation">
-      Downloads
-    </a>
-    <span> | </span>
-    <a href="https://github.com/marktext/marktext#development">
-      Development
-    </a>
-    <span> | </span>
-    <a href="https://github.com/marktext/marktext#contribution">
-      Contribution
-    </a>
-  </h3>
-</div>
-
-<div align="center">
-  <sub>Translations:</sub>
-  <a href="docs/i18n/ar.md#readme">
-    <span>:saudi_arabia:</span>
-  </a>
-  <a href="docs/i18n/zh_cn.md#readme">
-    <span>:cn:</span>
-  </a>
-  <a href="docs/i18n/zh_tw.md#readme">
-    <span>:taiwan:</span>
-  </a>
-  <a href="docs/i18n/pl.md#readme">
-    <span>:poland:</span>
-  </a>
-  <a href="docs/i18n/ja.md#readme">
-    <span>:jp:</span>
-  </a>
-  <a href="docs/i18n/french.md#readme">
-    <span>:fr:</span>
-  </a>
-  <a href="docs/i18n/tr.md#readme">
-    <span>:tr:</span>
-  </a>
-  <a href="docs/i18n/spanish.md#readme">
-    <span>:es:</span>
-  </a>
-  <a href="docs/i18n/pt.md#readme">
-    <span>:portugal:</span>
-  </a>
-  <a href="docs/i18n/ko.md#readme">
-    <span>:kr:</span>
-  </a>
-</div>
-
-<div align="center">
-  <sub>This Markdown editor that could. Built with ❤︎ by
-    <a href="https://github.com/Jocs">Jocs</a> and
-    <a href="https://github.com/marktext/marktext/graphs/contributors">
-      contributors
-    </a>
-    .
-  </sub>
 </div>
 
 <br />
 
-<h2 align="center">Supporting MarkText</h2>
+## 🌟 项目特色 (关于此分支)
 
-MarkText is an MIT licensed open source project, and the latest version will always be downloadable for free from the GitHub release page. MarkText is still in development, and its development is inseparable from all sponsors. I hope you join them:
+本项目 (`vvangpc/marktext-cn`) 脱胎于备受赞誉的开源项目 MarkText。针对国内 Windows 用户的核心诉求，我们做出了以下深度定制改造：
 
-- [Become a backer or sponsor on Patreon](https://www.patreon.com/ranluo) or [One time donation](https://github.com/Jocs/sponsor.me)
-- [Become a backer or sponsor on Open Collective](https://opencollective.com/marktext)
+1. **全面中文化**：深度翻译了所有的软件菜单模板（包括文件、编辑、段落、格式、视图、主题等），使用符合国人习惯的专业术语，并完美保留了系统级 Alt 快捷键功能。
+2. **极简架构**：
+   - 彻底卸载了 macOS (`.dmg`, `.app`) 与 Linux (`.AppImage`, `.deb`) 的打包负担。
+   - 专注适配 Windows 环境，限定为 **x64 架构**（全面兼容 Win 10 / Win 11），大幅降低了构建失败率与代码冗余。
+3. **现代化云编译**：完全打通并修复了 GitHub Actions 的云端环境链路，所有版本均可由云端全自动生成可用 `.exe` 和 免安装免编译的便携包。
 
-##### What's the difference between Patreon and Open Collective?
+---
 
-Patreon: Funds will be directly sponsored to Luo Ran (@jocs) who created MarkText and continues to maintain it.
-Open Collective: All expenses are transparent. The funds will be used for the development and maintenance of MarkText, funding online and offline activities, and acquiring other necessary resources.
-Names and company logos of all sponsors (from both Patreon and Open Collective) will appear on the official website for MarkText and in its README.md file.
-
-**Looking for MarkText-like editing with cloud storage? try [Inkio](https://inkio.me)**
-
-<a href="https://inkio.me/" target="_blank">
- <img src="https://inkio.me/static/media/logo.35f605dc31b1a0615087.png" width="100">
-</a>
-
-**Platinum Sponsors**
-
-<a href="https://opencollective.com/marktext#platinum-sponsors">
- <img src="https://opencollective.com/marktext/tiers/platinum-sponsors.svg?avatarHeight=36&width=600">
-</a>
-
-**Gold Sponsors**
-
-<a href="https://opencollective.com/marktext#platinum-sponsors">
-  <img src="https://opencollective.com/marktext/tiers/gold-sponsors.svg?avatarHeight=36&width=600">
-</a>
-
-**Silver Sponsors**
-
-<a href="https://opencollective.com/marktext#platinum-sponsors">
-  <img src="https://opencollective.com/marktext/tiers/silver-sponsors.svg?avatarHeight=36&width=600">
-</a>
-
-**Bronze Sponsors**
-
-<a href="https://opencollective.com/marktext#platinum-sponsors">
-  <img src="https://opencollective.com/marktext/tiers/bronze-sponsors.svg?avatarHeight=36&width=600">
-</a>
-
-**Backers**
-
-<a href="https://opencollective.com/marktext#backers">
-  <img src="https://opencollective.com/marktext/tiers/backer.svg?avatarHeight=36&width=600">
-</a>
-
-## Screenshot
+## 📷 软件截图
 
 ![](docs/marktext.png?raw=true)
 
-## Features
+---
 
-- Realtime preview (WYSIWYG) and a clean and simple interface to get a distraction-free writing experience.
-- Support [CommonMark Spec](https://spec.commonmark.org/0.29/), [GitHub Flavored Markdown Spec](https://github.github.com/gfm/) and selective support [Pandoc markdown](https://pandoc.org/MANUAL.html#pandocs-markdown).
-- Markdown extensions such as math expressions (KaTeX), front matter and emojis.
-- Support paragraphs and inline style shortcuts to improve your writing efficiency.
-- Output **HTML** and **PDF** files.
-- Various themes: **Cadmium Light**, **Material Dark** etc.
-- Various editing modes: **Source Code mode**, **Typewriter mode**, **Focus mode**.
-- Paste images directly from clipboard.
+## ✨ 核心功能 (继承自原版)
 
-<h4 align="center">:crescent_moon:themes:high_brightness:</h4>
+- 实时预览 (WYSIWYG) 结合干净简洁的界面，带来无干扰的沉浸式写作体验。
+- 支持 [CommonMark 规范](https://spec.commonmark.org/0.29/)、[GitHub Flavored Markdown 规范](https://github.github.com/gfm/) 并选择性支持 Pandoc markdown。
+- 丰富的 Markdown 扩展：数学公式 (KaTeX)、Front Matter 和 Emoji 标签。
+- 支持段落重构与行内样式快捷键，显著提升输入效率。
+- 支持导出为高质量的 **HTML** 和 **PDF** 文件。
+- 包含丰富的内置主题：**Cadmium Light**, **Material Dark** 等六款精心调校的编辑器皮肤。
+- 三大沉浸编辑模式：**源码模式 (Source Code)**、**打字机模式 (Typewriter)** 和 **专注模式 (Focus)**。
+- 剪贴板原图直连映射解析（直接粘贴图像）。
 
-| Cadmium Light                                     | Dark                                            |
-|:-------------------------------------------------:|:-----------------------------------------------:|
-| ![](docs/themeImages/cadmium-light.png?raw=true)  | ![](docs/themeImages/dark.png?raw=true)         |
-| Graphite Light                                    | Material Dark                                   |
-| ![](docs/themeImages/graphite-light.png?raw=true) | ![](docs/themeImages/materal-dark.png?raw=true) |
-| Ulysses Light                                     | One Dark                                        |
-| ![](docs/themeImages/ulysses-light.png?raw=true)  | ![](docs/themeImages/one-dark.png?raw=true)     |
+<h4 align="center">:smile_cat:内置编辑模式:dog:</h4>
 
-<h4 align="center">:smile_cat:Edit modes:dog:</h4>
-
-| Source Code          | Typewriter               | Focus               |
+| 源码模式 (Source Code)          | 打字机模式 (Typewriter)               | 专注模式 (Focus)               |
 |:--------------------:|:------------------------:|:-------------------:|
 | ![](docs/source.gif) | ![](docs/typewriter.gif) | ![](docs/focus.gif) |
 
-## Why make another editor?
+---
 
-1. I love writing. I have used a lot of markdown editors, yet there is still not an editor that can fully meet my needs. I don't like to be disturbed when I write by some unbearable bug. **MarkText** uses virtual DOM to render pages which has the added benefits of being highly efficient and being open source. That way anyone who loves markdown and writing can use MarkText.
-2. As mentioned above, **MarkText** is completely free and open source and will be open source forever. We hope that all markdown lovers will contribute their own code and help develop **MarkText** into a popular markdown editor.
-3. There are many markdown editors and all have their own merits, some have features which others don't. It's difficult to satisfy each markdown users' needs but we hope **MarkText** will be able to satisfy each markdown user as much as possible. Although the latest **MarkText** is still not perfect, we will try to make it as best as we possibly can.
+## 📥 下载与安装
 
-## Download and Installation
+### 稳定构建版下载
+由于本项目配置了全自动构建流水线，获取最新中文发行版非常简单：
 
-![platform](https://img.shields.io/static/v1.svg?label=Platform&message=Linux-64%20|%20macOS-64%20|%20Win-32%20|%20Win-64&style=for-the-badge)
+1. 点击仓库上方的 **[Actions](https://github.com/vvangpc/marktext-cn/actions)** 标签页。
+2. 在左侧的工作流列表中，点击最新的 `Build` 任务记录。
+3. 滚动到页面底部的 **Artifacts (构建产物)** 区域。
+4. **下载 `MarkText-Windows-Prebuild`**：解压后即可直接双击 `marktext-setup.exe` 进行安装，或提取免安装版本使用。
 
-| ![](https://raw.githubusercontent.com/wiki/ryanoasis/nerd-fonts/screenshots/v1.0.x/mac-pass-sm.png)                                                                                                  | ![](https://raw.githubusercontent.com/wiki/ryanoasis/nerd-fonts/screenshots/v1.0.x/windows-pass-sm.png)                                                                                                          | ![](https://raw.githubusercontent.com/wiki/ryanoasis/nerd-fonts/screenshots/v1.0.x/linux-pass-sm.png)                                                                                                                        |
-|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| [![latest version](https://img.shields.io/github/downloads/marktext/marktext/latest/marktext-x64.dmg.svg)](https://github.com/marktext/marktext/releases/download/v0.17.1/marktext-x64.dmg) | [![latest version](https://img.shields.io/github/downloads/marktext/marktext/latest/marktext-setup.exe.svg)](https://github.com/marktext/marktext/releases/download/v0.17.1/marktext-setup.exe) | [![latest version](https://img.shields.io/github/downloads/marktext/marktext/latest/marktext-x86_64.AppImage.svg)](https://github.com/marktext/marktext/releases/download/v0.17.1/marktext-x86_64.AppImage) |
+---
 
-Want to see new features of the latest version? Please refer to [CHANGELOG](.github/CHANGELOG.md).
+## 🛠️ 本地开发与构建
 
-#### macOS
+如果您想继续完善这款中文编辑器的源码并打包：
 
-You can either download the latest `marktext-%version%.dmg` from the [release page](https://github.com/marktext/marktext/releases/latest) or install MarkText using [**homebrew cask**](https://github.com/caskroom/homebrew-cask). To use Homebrew-Cask you just need to have [Homebrew](https://brew.sh/) installed.
+**1. 环境准备:**
+- 操作系统：Windows (推荐 Win 10及以上)
+- **Node.js**: `v16.x` (`16.20.2` 推荐)
+- **Python**: `v3.11` (切勿使用 3.12 及以上版本，必须带有 `distutils`)
+- **Yarn**: `^1.22`
+- **C++ 编译链**: Visual Studio 2019 或 2022 (需要安装 *使用C++的桌面开发* 工作负载)
 
+**2. 代码初始化:**
 ```bash
-brew install --cask mark-text
+# 获取源码
+git clone https://github.com/vvangpc/marktext-cn.git
+cd marktext-cn
+
+# 安装依赖
+yarn install --check-files --frozen-lockfile
 ```
 
-#### Windows
-
-Simply download and install MarkText via setup wizard (`marktext-setup-%version%.exe`) and choose whether to install per-user or machine wide. Alternatively, install MarkText using a package manager such as [Chocolatey](https://chocolatey.org/) or [Winget](https://docs.microsoft.com/en-us/windows/package-manager/winget/).
-
-To use Chocolatey, you need to have [Chocolatey](https://chocolatey.org/install) installed:
-
+**3. 本地调试与打包:**
 ```bash
-choco install marktext
+# 启动本地开发热更服务器
+yarn run dev
+
+# 编译并打包为 Windows .exe 文件
+yarn run release:win
 ```
 
-To use Winget, you need to have [Winget](https://docs.microsoft.com/en-us/windows/package-manager/winget/#install-winget) installed:
+---
 
-```bash
-winget install marktext
-```
+## 🤝 鸣谢与许可
 
-#### Linux
+此分支项目的构建与优化由国人社区提供。所有底层核心技术以及 UI 灵感归功于 [Jocs](https://github.com/Jocs) 及其背后的整个官方 [MarkText Contributors](https://github.com/marktext/marktext/graphs/contributors) 团队。
 
-Please follow the [Linux installation instructions](docs/LINUX.md).
-
-#### Other
-
-All binaries for Linux, macOS and Windows can be downloaded from the [release page](https://github.com/marktext/marktext/releases/latest). If a version is unavailable for your system, then please open an [issue](https://github.com/marktext/marktext/issues).
-
-## Development
-
-If you wish to build MarkText yourself, please check out our [build instructions](docs/dev/BUILD.md).
-
-- [User documentation](docs/README.md)
-- [Developer documentation](docs/dev/README.md)
-
-If you have any questions regarding MarkText, you are welcome to write an issue. When doing so please use the default format found when opening an issue. Of course, if you submit a PR directly, it will be greatly appreciated.
-
-## Integrations
-
-- [Alfred Workflow](http://www.packal.org/workflow/mark-text): A Workflow for the macOS app Alfred: Use "mt" to open files/folder with MarkText.
-
-## Contribution
-
-MarkText is in development, please make sure to read the [Contributing Guide](CONTRIBUTING.md) before making a pull request. Want to add some features to MarkText? Refer to our [roadmap](https://github.com/marktext/marktext/projects?type=classic) and open issues.
-
-
-## Contributors
-
-Thank you to all the people who have already contributed to MarkText[[contributors](https://github.com/marktext/marktext/graphs/contributors)].
-
-Special thanks to @[Yasujizr](https://github.com/Yasujizr) who designed the MarkText logo.
-
-<a href="https://github.com/marktext/marktext/graphs/contributors"><img src="https://opencollective.com/marktext/contributors.svg?width=890" /></a>
-
-## License
-
-[**MIT**](LICENSE).
-
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fmarktext%2Fmarktext.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fmarktext%2Fmarktext?ref=badge_large)
+**授权协议**：[**MIT License**](LICENSE)
