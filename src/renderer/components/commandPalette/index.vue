@@ -65,7 +65,7 @@ export default {
   },
   data () {
     this.currentCommand = null
-    this.defaultPlaceholderText = 'Type a command to execute'
+    this.defaultPlaceholderText = '输入要执行的命令'
     return {
       showCommandPalette: false,
       placeholderText: this.defaultPlaceholderText,

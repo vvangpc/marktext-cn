@@ -185,8 +185,8 @@ class App {
         type: 'tasks',
         items: [{
           type: 'task',
-          title: 'New Window',
-          description: 'Opens a new window',
+          title: '新建窗口',
+          description: '打开一个新窗口',
           program: process.execPath,
           args: '--new-window',
           iconPath: process.execPath,

@@ -15,7 +15,7 @@ export const CLOSE_THIS = {
 }
 
 export const CLOSE_OTHERS = {
-  label: '关闭其他标签',
+  label: '关闭其他',
   id: 'closeOtherTabs',
   click (menuItem, browserWindow) {
     contextMenu.closeOthers(menuItem._tabId)
@@ -23,7 +23,7 @@ export const CLOSE_OTHERS = {
 }
 
 export const CLOSE_SAVED = {
-  label: '关闭已保存的标签',
+  label: '关闭已保存的标签页',
   id: 'closeSavedTabs',
   click (menuItem, browserWindow) {
     contextMenu.closeSaved()
@@ -31,7 +31,7 @@ export const CLOSE_SAVED = {
 }
 
 export const CLOSE_ALL = {
-  label: '关闭所有标签',
+  label: '关闭所有标签页',
   id: 'closeAllTabs',
   click (menuItem, browserWindow) {
     contextMenu.closeAll()

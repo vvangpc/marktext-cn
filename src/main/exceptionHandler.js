@@ -13,8 +13,8 @@ import { createAndOpenGitHubIssueUrl } from './utils/createGitHubIssue'
 
 const EXIT_ON_ERROR = !!process.env.MARKTEXT_EXIT_ON_ERROR
 const SHOW_ERROR_DIALOG = !process.env.MARKTEXT_ERROR_INTERACTION
-const ERROR_MSG_MAIN = 'An unexpected error occurred in the main process'
-const ERROR_MSG_RENDERER = 'An unexpected error occurred in the renderer process'
+const ERROR_MSG_MAIN = '主进程发生意外错误'
+const ERROR_MSG_RENDERER = '渲染进程发生意外错误'
 
 let logger = s => console.error(s)
 
@@ -55,9 +55,9 @@ const handleError = async (title, error, type) => {
     const { response } = await dialog.showMessageBox({
       type: 'error',
       buttons: [
-        'OK',
-        'Copy Error',
-        'Report...'
+        '确定',
+        '复制错误',
+        '报告问题...'
       ],
       defaultId: 0,
       noLink: true,

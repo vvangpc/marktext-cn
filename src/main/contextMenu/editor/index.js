@@ -37,7 +37,7 @@ export const showEditorContextMenu = (win, event, params, isSpellcheckerEnabled)
     if (isSpellcheckerEnabled) {
       const spellingSubmenu = spellcheckMenuBuilder(isMisspelled, misspelledWord, dictionarySuggestions)
       menu.append(new MenuItem({
-        label: '拼写...',
+        label: '拼写检查...',
         submenu: spellingSubmenu
       }))
       menu.append(new MenuItem(SEPARATOR))

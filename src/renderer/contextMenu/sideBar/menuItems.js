@@ -55,7 +55,7 @@ export const RENAME = {
 }
 
 export const DELETE = {
-  label: '移动到回收站',
+  label: '移至回收站',
   id: 'deleteMenuItem',
   click (menuItem, browserWindow) {
     contextMenu.remove()

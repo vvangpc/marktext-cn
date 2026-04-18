@@ -44,7 +44,7 @@ const add = async (win, pathname, type, endOfLine, autoGuessEncoding, trimTraili
       // Only notify user about opened files.
       if (type === 'file') {
         win.webContents.send('mt::show-notification', {
-          title: 'Watcher I/O error',
+          title: '文件监视器 I/O 错误',
           type: 'error',
           message: err.message
         })
@@ -93,7 +93,7 @@ const change = async (win, pathname, type, endOfLine, autoGuessEncoding, trimTra
       // Only notify user about opened files.
       if (type === 'file') {
         win.webContents.send('mt::show-notification', {
-          title: 'Watcher I/O error',
+          title: '文件监视器 I/O 错误',
           type: 'error',
           message: err.message
         })
@@ -240,9 +240,9 @@ class Watcher {
             log.warn('inotify limit reached: Too many file descriptors are opened.')
 
             win.webContents.send('mt::show-notification', {
-              title: 'inotify limit reached',
+              title: '已达 inotify 上限',
               type: 'warning',
-              message: 'Cannot watch all files and file changes because too many file descriptors are opened.'
+              message: '打开的文件句柄过多，无法监视全部文件及其变更。'
             })
           }
         } else {

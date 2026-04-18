@@ -19,7 +19,7 @@ export const PASTE = {
 }
 
 export const COPY_AS_MARKDOWN = {
-  label: '复制为Markdown',
+  label: '复制为 Markdown',
   id: 'copyAsMarkdownMenuItem',
   click (menuItem, targetWindow) {
     targetWindow.webContents.send('mt::cm-copy-as-markdown')
@@ -27,7 +27,7 @@ export const COPY_AS_MARKDOWN = {
 }
 
 export const COPY_AS_HTML = {
-  label: '复制为HTML',
+  label: '复制为 HTML',
   id: 'copyAsHtmlMenuItem',
   click (menuItem, targetWindow) {
     targetWindow.webContents.send('mt::cm-copy-as-html')
@@ -43,7 +43,7 @@ export const PASTE_AS_PLAIN_TEXT = {
 }
 
 export const INSERT_BEFORE = {
-  label: '在前面插入段落',
+  label: '在上方插入段落',
   id: 'insertParagraphBeforeMenuItem',
   click (menuItem, targetWindow) {
     targetWindow.webContents.send('mt::cm-insert-paragraph', 'before')
@@ -51,7 +51,7 @@ export const INSERT_BEFORE = {
 }
 
 export const INSERT_AFTER = {
-  label: '在后面插入段落',
+  label: '在下方插入段落',
   id: 'insertParagraphAfterMenuItem',
   click (menuItem, targetWindow) {
     targetWindow.webContents.send('mt::cm-insert-paragraph', 'after')

@@ -145,8 +145,8 @@ class EditorWindow extends BaseWindow {
 
       const { response } = await dialog.showMessageBox(win, {
         type: 'warning',
-        buttons: ['Close', 'Reload', 'Keep It Open'],
-        message: 'MarkText has crashed',
+        buttons: ['关闭', '重新加载', '保持打开'],
+        message: 'MarkText 已崩溃',
         detail: msg
       })
 

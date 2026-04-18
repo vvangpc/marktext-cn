@@ -84,9 +84,9 @@ const handleResponseForExport = async (e, { type, content, pathname, title, page
       win.webContents.send('mt::export-success', { type, filePath })
     } catch (err) {
       log.error('Error while exporting:', err)
-      const ERROR_MSG = err.message || `Error happened when export ${filePath}`
+      const ERROR_MSG = err.message || `导出 ${filePath} 时发生错误`
       win.webContents.send('mt::show-notification', {
-        title: 'Export failure',
+        title: '导出失败',
         type: 'error',
         message: ERROR_MSG
       })
@@ -161,10 +161,10 @@ const handleResponseForSave = async (e, { id, filename, markdown, pathname, opti
 const showUnsavedFilesMessage = async (win, files) => {
   const { response } = await dialog.showMessageBox(win, {
     type: 'warning',
-    buttons: ['Save', 'Cancel', 'Don\'t save'],
+    buttons: ['保存', '取消', '不保存'],
     defaultId: 0,
-    message: `Do you want to save the changes you made to ${files.length} ${files.length === 1 ? 'file' : 'files'}?\n\n${files.map(f => f.filename).join('\n')}`,
-    detail: 'Your changes will be lost if you don\'t save them.',
+    message: `是否要保存对 ${files.length} 个文件所做的更改？\n\n${files.map(f => f.filename).join('\n')}`,
+    detail: '如果不保存，您的更改将会丢失。',
     cancelId: 1,
     noLink: true
   })
@@ -185,9 +185,9 @@ const showUnsavedFilesMessage = async (win, files) => {
 
 const noticePandocNotFound = win => {
   return win.webContents.send('mt::pandoc-not-exists', {
-    title: 'Import Warning',
+    title: '导入警告',
     type: 'warning',
-    message: 'Install pandoc before you want to import files.',
+    message: '导入文件前请先安装 pandoc。',
     time: 10000
   })
 }
