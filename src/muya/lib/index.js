@@ -166,19 +166,34 @@ class Muya {
   }
 
   setMarkdown (markdown, cursor, isRenderCursor = true) {
-    let newMarkdown = markdown
-    let isValid = false
-    if (cursor && cursor.anchor && cursor.focus) {
-      const cursorInfo = this.contentState.addCursorToMarkdown(markdown, cursor)
-      newMarkdown = cursorInfo.markdown
-      isValid = cursorInfo.isValid
+    try {
+      let newMarkdown = markdown
+      let isValid = false
+      if (cursor && cursor.anchor && cursor.focus) {
+        const cursorInfo = this.contentState.addCursorToMarkdown(markdown, cursor)
+        newMarkdown = cursorInfo.markdown
+        isValid = cursorInfo.isValid
+      }
+      this.contentState.importMarkdown(newMarkdown)
+      this.contentState.importCursor(cursor && isValid)
+      this.contentState.render(isRenderCursor)
+      setTimeout(() => {
+        this.dispatchChange()
+      }, 0)
+    } catch (err) {
+      // Defensive: avoid crashing the renderer when opening files with
+      // unusual content (e.g. Mathpix-converted Markdown). Fall back to
+      // an empty document and log the failure for diagnosis.
+      /* eslint-disable no-console */
+      console.error('[MarkText] setMarkdown failed:', err)
+      try {
+        this.contentState.importMarkdown('')
+        this.contentState.importCursor(false)
+        this.contentState.render(isRenderCursor)
+      } catch (fallbackErr) {
+        console.error('[MarkText] fallback render failed:', fallbackErr)
+      }
     }
-    this.contentState.importMarkdown(newMarkdown)
-    this.contentState.importCursor(cursor && isValid)
-    this.contentState.render(isRenderCursor)
-    setTimeout(() => {
-      this.dispatchChange()
-    }, 0)
   }
 
   setCursor (cursor) {

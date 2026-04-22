@@ -49,13 +49,15 @@ export default function loadImageAsync (imageInfo, attrs, className, imageClass)
         if (imageText) {
           if (imageText.classList.contains('ag-inline-image')) {
             const imageContainer = imageText.querySelector('.ag-image-container')
-            const oldImage = imageContainer.querySelector('img')
-            if (oldImage) {
-              oldImage.remove()
+            if (imageContainer) {
+              const oldImage = imageContainer.querySelector('img')
+              if (oldImage) {
+                oldImage.remove()
+              }
+              imageContainer.appendChild(img)
+              imageText.classList.remove('ag-image-loading')
+              imageText.classList.add('ag-image-success')
             }
-            imageContainer.appendChild(img)
-            imageText.classList.remove('ag-image-loading')
-            imageText.classList.add('ag-image-success')
           } else {
             insertAfter(img, imageText)
             operateClassName(imageText, 'add', className)
